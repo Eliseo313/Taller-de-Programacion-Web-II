@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- vista tipo form del modelo helloworld.players -->	
+		<record model="ir.ui.view" id="players_form">
+            <field name="name">helloworld.players.form</field>
+            <field name="model">helloworld.players</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group string="Datos de jugadores">
+						<field name="photo" placeholder="Fotografia" widget="image" options="{'size':[50,50]}"/>
+						<field name="team_id" placeholder="Nombre del equipo" />
+                        <field name="name" placeholder="Nombre del jugador"/>
+                        <field name="numero" placeholder="numero de camiseta" />
+						<field name="posicion" placeholder="Posicion" />
+                    </group>
+                </sheet>
+            </form>
+            </field>
+		</record>
+
+        <!-- vista tipo tree del modelo helloworld.players -->	
+		<record model="ir.ui.view" id="helloworld_players_tree">
+			<field name="name">helloworld.players.tree</field>
+			<field name="model">helloworld.players</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="players" >
+                        <field name="photo" options="{'size':[50,50]}" />
+						<field name="team_id"  />
+                        <field name="name" />
+                        <field name="numero"/>
+						<field name="posicion"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="helloworld_players_search">
+			<field name="name">helloworld.players.search</field>
+			<field name="model">helloworld.players</field>
+			<field name="arch" type="xml">
+				<search>
+                        <field name="team_id"  />
+                        <field name="name" />
+                        <field name="numero"/>
+						<field name="posicion"/>
+				</search>
+			</field>
+		</record>
+
+
+
+		<!-- ACCION PARA EL MODELO helloworld.players -->	
+		<record id="helloworld_players_action" model="ir.actions.act_window">
+			<field name="name">Jugadores</field>
+			<field name="res_model">helloworld.players</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+</odoo>

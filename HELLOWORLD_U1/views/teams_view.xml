@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- vista tipo form del modelo escolares.alumnos -->	
+		<record model="ir.ui.view" id="teams_form">
+            <field name="name">helloworld.teams.form</field>
+            <field name="model">helloworld.teams</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group string="Datos de alumnos">
+                        <field name="name" placeholder="Nombre del equipo" />
+                         <field name="photo" placeholder="Foto"/>
+                        <field name="coach_id" placeholder="Coach"/>
+                       </group>
+                </sheet>
+            </form>
+            </field>
+		</record>
+
+        <!-- vista tipo tree del modelo escolares.alumnos -->	
+		<record model="ir.ui.view" id="escolares_alumnos_tree">
+			<field name="name">escolares.teams.tree</field>
+			<field name="model">escolares.teams</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="teams" >
+						 <field name="name" />
+                        <field name="coach_id" />
+                        <field name="photo" widget="image"/>
+						
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="escolares_teams_search">
+			<field name="name">escolares.teams.search</field>
+			<field name="model">escolares.teams</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+					<field name="nombre" />
+					<field name="direccion" />
+					<field name="telefono" />
+					<field name="sexo" />
+					<field name="edad" />
+					<field name="inscrito" />
+					<field name="carrera_id" />
+					
+				</search>
+			</field>
+		</record>
+
+
+
+		<!-- ACCION PARA EL MODELO escolares.alumnos -->	
+		<record id="escolares_alumnos_action" model="ir.actions.act_window">
+			<field name="name">Teams</field>
+			<field name="res_model">helloworld.teams</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
+
+</odoo>

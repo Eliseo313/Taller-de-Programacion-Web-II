@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<menuitem name="Teams management" id="helloworld_menu" 
+		sequence="20" />
+				<menuitem name="Configuración" 
+				action="helloworld_configuracion_action"  
+				id="helloworld_configuracion_menu" sequence="10" 
+				parent="helloworld_menu" />
+				<menuitem name="Teams" 
+				action="helloworld_teams_action"  
+				id="helloworld_teams_menu" sequence="20" 
+				parent="helloworld_configuracion_menu" />
+				
+	</data>
+</odoo>
