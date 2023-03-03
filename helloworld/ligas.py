@@ -6,4 +6,5 @@ class ligas(models.Model):
     
     name = fields.Char(string='Nombre')
     photo = fields.Binary(string='Foto')
+    
     _order = 'photo,name'

@@ -10,6 +10,10 @@
     'depends': ['base'],
     'data': [
         'views/teams_view.xml',
+        'views/players_view.xml',
+        'views/estadios_view.xml',
+        'views/arbitros_view.xml',
+        'views/ligas_view.xml',
         'views/menu_view.xml',
         
     ],
