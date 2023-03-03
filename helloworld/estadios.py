@@ -6,5 +6,6 @@ class estadios(models.Model):
 
     name = fields.Char(string='Nombre')
     photo = fields.Binary(string='Foto')
+    liga_id = fields.Many2one('helloworld.ligas',string='Liga')
 
-    _order = 'photo,name'
+    _order = 'photo,name,liga_id'
