@@ -10,4 +10,4 @@ class players(models.Model):
     numero = fields.Integer(string='Numero de playera')
     posicion = fields.Selection([('del','Delantero'),('def','Defensa'),('por','Portero'),('cen','Central')],string='Numero de playera')
 
-    _order = 'team_id,name'
+    _order = 'photo,team_id,liga_id,name'

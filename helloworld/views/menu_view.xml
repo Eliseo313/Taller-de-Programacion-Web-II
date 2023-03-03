@@ -11,5 +11,7 @@
 				<menuitem name="Estadios" action="helloworld_estadios_action"  id="helloworld_estadios_menu" sequence="40" parent="helloworld_configuracion_menu" />
 
 				<menuitem name="Arbitros" action="helloworld_arbitros_action"  id="helloworld_arbitros_menu" sequence="50" parent="helloworld_configuracion_menu" />
+
+				
 	</data>
 </odoo>

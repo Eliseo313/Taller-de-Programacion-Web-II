@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- vista tipo form del modelo helloworld.ligas -->	
+		<record model="ir.ui.view" id="ligas_form">
+            <field name="name">helloworld.ligas.form</field>
+            <field name="model">helloworld.ligas</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group string="Datos de la liga">
+					   <field name="name" placeholder="Nombre del jugador"/>
+                    </group>
+                </sheet>
+            </form>
+            </field>
+		</record>
+
+        <!-- vista tipo tree del modelo helloworld.ligas -->	
+		<record model="ir.ui.view" id="helloworld_ligas_tree">
+			<field name="name">helloworld.ligas.tree</field>
+			<field name="model">helloworld.ligas</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="ligas" >
+                    <field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="helloworld_ligas_search">
+			<field name="name">helloworld.ligas.search</field>
+			<field name="model">helloworld.ligas</field>
+			<field name="arch" type="xml">
+				<search>
+                        <field name="name" />                        
+				</search>
+			</field>
+		</record>
+
+
+
+		<!-- ACCION PARA EL MODELO helloworld.ligas -->	
+		<record id="helloworld_ligas_action" model="ir.actions.act_window">
+			<field name="name">Ligas</field>
+			<field name="res_model">helloworld.ligas</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+</odoo>

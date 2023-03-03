@@ -4,3 +4,4 @@ from . import teams
 from . import players
 from . import estadios
 from . import arbitros
+from . import ligas

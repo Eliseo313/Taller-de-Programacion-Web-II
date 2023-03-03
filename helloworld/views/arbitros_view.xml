@@ -10,8 +10,7 @@
                 <sheet>
                     <group string="Datos de arbitro">
 						<field name="photo" placeholder="Fotografia" widget="image" options="{'size':[50,50]}"/>
-						<field name="arbitro_id" placeholder="id del arbitro" />
-                        <field name="name" placeholder="Nombre del arbitro"/>
+						<field name="name" placeholder="Nombre del arbitro"/>
                     </group>
                 </sheet>
             </form>
@@ -26,7 +25,6 @@
 			<field name="arch" type="xml">
 				<tree string="arbitros" >
                         <field name="photo" options="{'size':[50,50]}" />
-						<field name="arbitro_id"  />
                         <field name="name" />
 				</tree>
 			</field>
@@ -37,7 +35,6 @@
 			<field name="model">helloworld.arbitros</field>
 			<field name="arch" type="xml">
 				<search>
-                        <field name="arbitro_id"  />
                         <field name="name" />
 				</search>
 			</field>
