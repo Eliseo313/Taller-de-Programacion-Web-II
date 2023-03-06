@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <!-- vista tipo form del modelo helloworld.estadios -->	
-		<record model="ir.ui.view" id="estadios_form">
-            <field name="name">helloworld.estadios.form</field>
-            <field name="model">helloworld.estadios</field>
-            <field name="type">form</field>
-            <field name="arch" type="xml">
-            <form>
-                <sheet>
-                    <group string="Datos de estadio">
-						<field name="photo" placeholder="Fotografia" widget="image" options="{'size':[50,50]}"/>
-                        <field name="name" placeholder="Nombre del estadio"/>
-						<field name="liga_id" placeholder="Liga"/>
-                    </group>
-                </sheet>
-            </form>
-            </field>
-		</record>
 
         <!-- vista tipo tree del modelo helloworld.estadios -->	
 		<record model="ir.ui.view" id="helloworld_estadios_tree">
@@ -24,32 +7,20 @@
 			<field name="model">helloworld.estadios</field>
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
-				<tree string="estadios" >
-                        <field name="photo" options="{'size':[20,20]}" />
-                        <field name="name" />
-						<field name="liga_id"/>
+				<tree string="Estadios" editable="bottom">
+					<field name="photo"  widget="image" options="{'size': [50, 50]}"/>
+					<field name="name" />
+					<field name="liga_id" />
 				</tree>
 			</field>
 		</record>
-
-		<record model="ir.ui.view" id="helloworld_estadios_search">
-			<field name="name">helloworld.estadios.search</field>
-			<field name="model">helloworld.estadios</field>
-			<field name="arch" type="xml">
-				<search>
-                        <field name="name" />
-						<field name="liga_id" />
-				</search>
-			</field>
-		</record>
-
 
 
 		<!-- ACCION PARA EL MODELO helloworld.estadios -->	
 		<record id="helloworld_estadios_action" model="ir.actions.act_window">
 			<field name="name">Estadios</field>
 			<field name="res_model">helloworld.estadios</field>
-			<field name="view_mode">tree,form</field>
+			<field name="view_mode">tree</field>
 		</record>
 
 </odoo>

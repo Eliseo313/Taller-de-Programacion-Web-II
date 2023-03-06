@@ -1,20 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <!-- vista tipo form del modelo helloworld.ligas -->	
-		<record model="ir.ui.view" id="ligas_form">
-            <field name="name">helloworld.ligas.form</field>
-            <field name="model">helloworld.ligas</field>
-            <field name="type">form</field>
-            <field name="arch" type="xml">
-            <form>
-                <sheet>
-                    <group string="Datos de la liga">
-					   <field name="name" placeholder="Nombre del jugador"/>
-                    </group>
-                </sheet>
-            </form>
-            </field>
-		</record>
 
         <!-- vista tipo tree del modelo helloworld.ligas -->	
 		<record model="ir.ui.view" id="helloworld_ligas_tree">
@@ -22,22 +7,52 @@
 			<field name="model">helloworld.ligas</field>
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
-				<tree string="ligas" >
-                    <field name="name" />
+				<tree string="Ligas">
+					<field name="photo"  widget="image" options="{'size': [50, 50]}"/>
+					<field name="name" />
+					<field name="poblacion_id" />
+					<field name="estado_id" />
 				</tree>
 			</field>
 		</record>
+
+		<record model="ir.ui.view" id="ligas_form">
+            <field name="name">helloworld.ligas.form</field>
+            <field name="model">helloworld.ligas</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group string="Datos de ligas" >
+                        <field name="photo" widget="image" options="{'size': [150, 150]}"/>
+                        <field name="name" placeholder="Nombre de la liga"/>
+                        <field name="poblacion_id" placeholder="Población" />
+                        <field name="estado_id" placeholder="Estado" />
+                    </group>
+					<field name="team_ids" nolabel="1">
+						<tree editable="bottom">
+							<field name="photo" widget="image" options="{'size': [50, 50]}"/>
+							<field name="name"/>
+							<field name="coach_id"/>
+						</tree>
+					</field>
+                </sheet>
+            </form>
+            </field>
+		</record>
+
 
 		<record model="ir.ui.view" id="helloworld_ligas_search">
 			<field name="name">helloworld.ligas.search</field>
 			<field name="model">helloworld.ligas</field>
 			<field name="arch" type="xml">
 				<search>
-                        <field name="name" />                        
+                        <field name="name"/>
+                        <field name="poblacion_id"/>
+                        <field name="estado_id"/>
 				</search>
 			</field>
 		</record>
-
 
 
 		<!-- ACCION PARA EL MODELO helloworld.ligas -->	
