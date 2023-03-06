@@ -22,7 +22,18 @@ class ligas(models.Model):
     photo = fields.Binary(string='Logo')
     poblacion_id = fields.Many2one('helloworld.poblaciones',string='Población')
     estado_id = fields.Many2one('helloworld.estados',string='Estado')
+    teams = fields.Integer(compute='cal_num_teams',string= 'equipos',readonly=True)
     team_ids = fields.One2many('helloworld.teams','liga_id',string='Equipos')
     
     _order = 'name'
     _sql_constraints = [('ligas_uniq', 'unique(name)', 'Liga duplicada, intenta con otra...'),]
+
+
+    def cal_num_teams(self):
+        for rec in self:
+            num = 0
+            for team in rec.team_ids:
+                num += 1
+            rec.teams = num
+
+    

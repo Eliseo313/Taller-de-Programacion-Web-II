@@ -12,6 +12,7 @@
 					<field name="name" />
 					<field name="poblacion_id" />
 					<field name="estado_id" />
+					<field name="teams" />
 				</tree>
 			</field>
 		</record>
